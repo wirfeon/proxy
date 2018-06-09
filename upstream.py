@@ -47,7 +47,7 @@ def main():
     ctx = zmq.Context()
 
     frontend = ctx.socket(zmq.STREAM)
-    frontend.bind("tcp://127.0.0.1:%s" % PORT)
+    frontend.bind("tcp://127.0.0.1:%d" % PORT)
     
     down = ctx.socket(zmq.DEALER)
     down.bind("tcp://127.0.0.1:8444")
