@@ -50,7 +50,7 @@ def main():
     frontend.bind("tcp://127.0.0.1:%d" % PORT)
     
     down = ctx.socket(zmq.DEALER)
-    down.bind("tcp://127.0.0.1:8444")
+    #down.bind("tcp://127.0.0.1:8444")
     
     poller = zmq.Poller()
     poller.register(frontend, flags = zmq.POLLIN)
