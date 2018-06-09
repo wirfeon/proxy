@@ -46,7 +46,7 @@ def read_down(frontend, down):
 def main():
     ctx = zmq.Context()
 
-    addr = "tcp://thawing-garden-78594.herokuapp.com:%d" % PORT
+    addr = "tcp://0.0.0.0:%d" % PORT
     logger.info("Frontend bind to '%s'" % addr)
     frontend = ctx.socket(zmq.STREAM)
     frontend.bind(addr)
