@@ -7,6 +7,8 @@ import zmq
 import struct
 import binascii
 
+PORT = int(os.environ.get('PORT', '8443'))
+
 # Enable logging
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
 
@@ -45,7 +47,7 @@ def main():
     ctx = zmq.Context()
 
     frontend = ctx.socket(zmq.STREAM)
-    frontend.bind("tcp://127.0.0.1:8443")
+    frontend.bind("tcp://127.0.0.1:%s" % PORT)
     
     down = ctx.socket(zmq.DEALER)
     down.bind("tcp://127.0.0.1:8444")
