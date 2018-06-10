@@ -52,7 +52,7 @@ def main():
     frontend.bind(addr)
     
     down = ctx.socket(zmq.DEALER)
-    #down.bind("tcp://127.0.0.1:8444")
+    down.bind("tcp://0.0.0.0:8444")
     
     poller = zmq.Poller()
     poller.register(frontend, flags = zmq.POLLIN)
